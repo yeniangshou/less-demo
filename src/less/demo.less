@@ -1,0 +1,100 @@
+/*全局背景色和字体色变量*/
+@header-color:#555555;
+@middle-color:#f7f7f7;
+@footer-color:#7c7364;
+@white-color:#f8f5ef;
+@yellow-color:#ffb400;
+
+/*设置通用的响应式计算 px 转化 rem ,这里遇到一个很奇怪的问题，为什么这里解析出来css，前面会加个空格*/
+.get-height(@height){
+	height: (@height/16)rem;
+}
+
+.get-line-height(@height){
+	line-height: (@height/16)rem;
+}
+
+.get-width(@width){
+	height: (@width/16)rem;
+}
+
+.get-padding(@pt,@pr,@pb,@pl){
+	padding-left: (@pl/16)rem;
+	padding-top: (@pt/16)rem;
+	padding-right: (@pr/16)rem;
+	padding-bottom: (@pb/16)rem;
+}
+
+.get-margin(@mt,@mr,@mb,@ml){
+	margin-left: (@ml/16)rem;
+	margin-top: (@mt/16)rem;
+	margin-bottom: (@mb/16)rem;
+	margin-right: (@mr16)rem;
+}
+
+.get-font-size(@size){
+	font-size: (@size/16)rem;
+}
+
+/* reset */
+ul,li,body,div,p,img,a{
+	padding: 0;
+	margin:0;
+}
+
+img{
+	border: 0;
+}
+
+ul,li{
+	list-style:none;
+}
+
+a{
+	text-decoration: none;
+}
+
+/* index.html 具体样式设置*/
+.header-top{
+	background: @header-color;
+	.get-height(50);
+}
+
+body{
+	color:@white-color;
+	.get-font-size(20);
+	.get-height(50);
+}
+
+.tel{
+	float: left;
+}
+
+.nav{
+	float: right;
+	.get-padding(0,30,0,0);
+}
+
+.nav>li{
+	.get-padding(0,15,0,15);
+	.get-line-height(50);
+	float: left;
+}
+
+li+li{
+	border-left: 1px solid @white-color;
+}
+
+a{
+	color: @white-color;
+}
+
+@media only screen and (max-width: 480px) {
+	.tel{
+		display: none;
+	}
+
+	.nav li:nth-child(2),.nav li:nth-child(3){
+		display: none;
+	}
+}

@@ -1,0 +1,67 @@
+/*全局背景色和字体色变量*/
+/*设置通用的响应式计算 px 转化rem ,这里遇到一个很奇怪的问题，为什么这里解析出来css，前面会加个空格*/
+/* reset */
+ul,
+li,
+body,
+div,
+p,
+img,
+a {
+  padding: 0;
+  margin: 0;
+}
+img {
+  border: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* index.html 具体样式设置*/
+.header-top {
+  background: #555555;
+  height: 3.125rem;
+}
+body {
+  color: #f8f5ef;
+  font-size: 1.25rem;
+  height: 3.125rem;
+}
+.tel {
+  float: left;
+}
+.nav {
+  float: right;
+  padding-left: 0rem;
+  padding-top: 0rem;
+  padding-right: 1.875rem;
+  padding-bottom: 0rem;
+}
+.nav > li {
+  padding-left: 0.9375rem;
+  padding-top: 0rem;
+  padding-right: 0.9375rem;
+  padding-bottom: 0rem;
+  line-height: 3.125rem;
+  float: left;
+}
+li + li {
+  border-left: 1px solid #f8f5ef;
+}
+a {
+  color: #f8f5ef;
+}
+@media only screen and (max-width: 480px) {
+  .tel {
+  display: none;
+}
+.nav li:nth-child(2),
+.nav li:nth-child(3) {
+  display: none;
+}
+
+}
